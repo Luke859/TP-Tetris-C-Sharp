@@ -1,9 +1,9 @@
-.page{
+.pageCredits[b-1vb95oj8de]{
     background-color: black;
     height: 40em;
 }
 
-.interface {
+.interface[b-1vb95oj8de] {
     position: relative;
     top: 5em;
     background-color: #5A2328;
@@ -19,18 +19,22 @@
     padding: 30px;
 }
 
-.name {
-    font-size: 700%;
-    color: #00B691;
-}
-.button{
+.button[b-1vb95oj8de]{
+    position: absolute;
     display: flex;
-    font-size: 200%;
+    font-size: 150%;
+    margin-top: 35%;
     border-radius: 30px;
     background-color: #00B691;
-    margin: 40px auto;
-    justify-content: center;
-    flex-direction: column;
+    margin-left: 1%; 
     white-space: normal;
     padding: 8px 15px;
+}
+
+.name[b-1vb95oj8de] {
+    position: absolute;
+    font-size: 350%;
+    color: #00B691;
+    margin-top: 2%;
+    margin-left: 1%;
 }

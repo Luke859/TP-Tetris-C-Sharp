@@ -1,4 +1,4 @@
-.page{
+.pageOptions{
     background-color: black;
     height: 40em;
 }
@@ -19,18 +19,22 @@
     padding: 30px;
 }
 
-.name {
-    font-size: 700%;
-    color: #00B691;
-}
 .button{
+    position: absolute;
     display: flex;
-    font-size: 200%;
+    font-size: 150%;
+    margin-top: 35%;
     border-radius: 30px;
     background-color: #00B691;
-    margin: 40px auto;
-    justify-content: center;
-    flex-direction: column;
+    margin-left: 1%; 
     white-space: normal;
     padding: 8px 15px;
+}
+
+.name {
+    position: absolute;
+    font-size: 350%;
+    color: #00B691;
+    margin-top: 2%;
+    margin-left: 1%;
 }

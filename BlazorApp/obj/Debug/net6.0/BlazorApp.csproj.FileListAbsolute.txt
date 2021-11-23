@@ -26,3 +26,6 @@ E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\ref\BlazorApp.dll
 E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\BlazorApp.pdb
 E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\BlazorApp.genruntimeconfig.cache
 E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\scopedcss\Pages\Menu.razor.rz.scp.css
+E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\scopedcss\Pages\Game.razor.rz.scp.css
+E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\scopedcss\Pages\Credits.razor.rz.scp.css
+E:\Ynov B2\TP-Tetris-C-Sharp\BlazorApp\obj\Debug\net6.0\scopedcss\Pages\Options.razor.rz.scp.css
