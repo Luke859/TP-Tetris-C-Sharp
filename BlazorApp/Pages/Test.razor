@@ -1,0 +1,24 @@
+@page "/test"
+@using BlazorCreate.Data
+
+<h1> Page Test</h1>
+<p role="status">Current blocks: @array</p>
+
+<div class="card" style="width:22rem">
+    <div class="card-body">
+        <button @onclick="OnYes">Blocks</button>
+    </div>
+</div>
+
+@code {
+    int[,] array = new int[4, 4]{{0,0,1,0}, {0,0,1,0}, {0,0,1,0}, {0,0,1,0}};
+    private void OnYes()
+    {
+        for (int i = 0; i < array.GetLength(0); i++){
+                        for ( int j = 0; j < array.GetLength(1); j++){
+                                Console.Write("{0}", array[i, j]);
+                        }
+                        Console.WriteLine();
+                    }
+    }
+}
