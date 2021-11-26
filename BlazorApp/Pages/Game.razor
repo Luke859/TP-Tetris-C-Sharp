@@ -1,3 +1,4 @@
+@namespace BlazorApp
 <div class="page">
     @page "/game"
     <h1 class="name">TETRIS</h1> 
@@ -18,12 +19,13 @@
         JEU TETRIS
 
         <div id="grille">
-
+            @for(int y = 0; y < 10; y++){
+                @foreach (var i in Grid.CreateGrid(10, 20))
+                {
+                    <div id="cell"></div>
+                }
+            }
         </div>
 
     </div>
 </div>
-
-@code {
-
-}

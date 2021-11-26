@@ -14,7 +14,7 @@ namespace BlazorApp {
 
         public static newBlocks[] shapesArray;
 
-        BlocksShape(){
+        public void BlockShape(){
 
             shapesArray = new newBlocks[] {
                 //Square
@@ -189,16 +189,18 @@ namespace BlazorApp {
                         {1,0}
                     }
                 },
-            }; 
+                
+            };
+            Console.WriteLine(shapesArray.Length);
 
         }
-        public static newBlocks RandomShape(){
+        // public static newBlocks RandomShape(){
             
-            var random = new Random();
+        //     var random = new Random();
             
-            var randomShape = shapesArray[random.Next(shapesArray.Length)];
+        //     var randomShape = shapesArray[random.Next(shapesArray.Length)];
             
-            return randomShape; 
-        }
+        //     return randomShape; 
+        // }
     }    
 }

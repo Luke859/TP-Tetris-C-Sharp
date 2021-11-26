@@ -15,6 +15,8 @@ namespace BlazorApp
         {
             var Grid = new Grid();
             List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
+            var test = new BlocksShape();
+            test.BlockShape();
             CreateHostBuilder(args).Build().Run();
 
         }
