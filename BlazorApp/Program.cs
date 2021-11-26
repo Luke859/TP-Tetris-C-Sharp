@@ -14,7 +14,7 @@ namespace BlazorApp
         public static void Main(string[] args)
         {
             var Grid = new Grid();
-            List<List<Cell>> LouisTheShit = Grid.CreateGrid(10, 20);
+            List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
             CreateHostBuilder(args).Build().Run();
 
         }

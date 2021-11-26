@@ -12,12 +12,12 @@ namespace BlazorApp
         public int width = 10;
         public int height = 20;
 
-        public List<List<Cell>> CreateGrid(int width, int height){            
-            List<List<Cell>> Grid = new List<List<Cell>>();
+        public List<List<int>> CreateGrid(int width, int height){            
+            List<List<int>> Grid = new List<List<int>>();
             for(int j = 0; j < height; j++){
-                List<Cell> line = new List<Cell>();
+                List<int> line = new List<int>();
                 for(int i = 0; i < width; i++){
-                    line.Add(Cell.empty);
+                    line.Add(0);
                     Console.Write(line[i]);
                 }
                 Console.WriteLine();
@@ -26,8 +26,8 @@ namespace BlazorApp
             return Grid;
         }
 
-        public void UpdateGrid(int line, int colonne, Cell blocks){
-            
+        public List<List<int>> UpdateGrid(int line, int colonne, int blocks, List<List<int>> grid){
+            return grid;
         }
     }
 }
