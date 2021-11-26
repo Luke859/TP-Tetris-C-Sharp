@@ -26,8 +26,10 @@ namespace BlazorApp
             return Grid;
         }
 
-        public List<List<int>> UpdateGrid(int line, int colonne, int blocks, List<List<int>> grid){
-            return grid;
+        public List<List<int>> UpdateGrid(int line, int colonne, blocks = new NewBlocks, List<List<int>> grid){
+            for(int i = 0; i < blocks.GetLength(0); i++){
+
+            }
         }
     }
 }
