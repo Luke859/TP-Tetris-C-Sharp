@@ -2,12 +2,41 @@
 @using BlazorCreate.Data
 
 <h1> Page Test</h1>
-<p role="status">Current blocks: @array</p>
+<p role="status">Current blocks: </p>
+
+<p>
+    BlockWidth = @block.width
+</p>
+
+
+<p>
+    <input type="number" @bind-value="block.width" @bind-value:event="oninput"/> 
+    @* bind-value will change the value of the length and bind-value:event will change it willst we are typing *@
+</p>
+
+@* <p>
+    <label><input type="checkbox" @bind-value ="block.Active"/>
+        Active
+    </label>
+    <br/>
+    Active: @block.Active
+</p> *@
 
 <div class="card" style="width:22rem">
     <div class="card-body">
         <button @onclick="OnYes">Blocks</button>
     </div>
+</div>
+
+<div class="interface">
+    <p>
+        <option value="0"></option>
+        @foreach (var Cell in block.CreateGrid(20, 2))
+        {
+                <option value="@Cell">@Cell</option>
+            }
+        <br/>
+    </p>
 </div>
 
 @code {
@@ -21,4 +50,66 @@
                         Console.WriteLine();
                     }
     }
+    public class Grid 
+    {
+        public int width = 10;
+        public int height = 20;
+
+        public List<List<Cell>> CreateGrid(int width, int height){            
+            List<List<Cell>> Grid = new List<List<Cell>>();
+            for(int j = 0; j < height; j++){
+                List<Cell> line = new List<Cell>();
+                for(int i = 0; i < width; i++){
+                    line.Add(Cell.empty);
+                    Console.Write(line[i]);
+                }
+                Console.WriteLine();
+                Grid.Add(line);
+            }
+            return Grid;
+        }
+
+        public void UpdateGrid(int line, int colonne, Cell blocks){
+            
+        }
+    }
+
+    public enum Cell
+    {
+        empty,
+        lBlock,
+        JBlock,
+        LBlock,
+        OBlock,
+        SBlock,
+        TBlock,
+        ZBlock
+    }
+
+    Grid block = null;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        block = new Grid
+        {
+           width = 20,
+           height = 10
+
+        };
+
+        int[,] array = new int[4, 4]{{0,0,1,0}, 
+                                         {0,0,1,0}, 
+                                         {0,0,1,0}, 
+                                         {0,0,1,0}};
+
+            for (int i = 0; i < array.GetLength(0); i++){
+                for ( int j = 0; j < array.GetLength(1); j++){
+                        Console.WriteLine("{0}", array[i, j]);
+                }
+            }
+            Console.WriteLine();
+    }
+
+    
 }
