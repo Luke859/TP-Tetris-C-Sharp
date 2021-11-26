@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 
 
+
 namespace BlazorApp
 {
-    public class Grid
+    public class Grid : BlocksShape
     {
 
         public int width = 10;
         public int height = 20;
 
-        public List<List<int>> CreateGrid(int width, int height){            
+        public static List<List<int>> CreateGrid(int width, int height){            
+
             List<List<int>> Grid = new List<List<int>>();
             for(int j = 0; j < height; j++){
                 List<int> line = new List<int>();
@@ -25,9 +27,10 @@ namespace BlazorApp
             return Grid;
         }
 
-        public List<List<int>> UpdateGrid(int line, int colonne, int blocks, List<List<int>> grid){
-            return grid;
-        }
-    }
+        // public List<List<int>> UpdateGrid(int line, int colonne, newBlocks blocks , List<List<int>> grid){
+        //     for(){
 
+        //     }
+        // }
+    }
 }

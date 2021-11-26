@@ -13,7 +13,12 @@ namespace BlazorApp
     {
         public static void Main(string[] args)
         {
+            var Grid = new Grid();
+            List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
+            var test = new BlocksShape();
+            test.BlockShape();
             CreateHostBuilder(args).Build().Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -22,5 +27,7 @@ namespace BlazorApp
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
 }
