@@ -125,3 +125,31 @@
     border: 1px solid;
     border-color: grey;
 }
+
+.cellSquare{
+    background-color: yellow;
+}
+
+.cellLine{
+    background-color: skyblue;
+}
+
+.cellLBlock{
+    background-color: orange;
+}
+
+.cellJBlock{
+    background-color: blue;
+}
+
+.cellSBlock{
+    background-color: green;
+}
+
+.cellTBlock{
+    background-color: purple;
+}
+
+.cellZBlock{
+    background-color: red;
+}

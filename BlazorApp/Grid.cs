@@ -26,6 +26,10 @@ namespace BlazorApp
             return Grid;
         }
 
+        public static int WhichBlock( List<List<int>> grid, int line, int row){
+            return grid.ElementAt(line).ElementAt(row);
+        }
+
         // public List<List<int>> UpdateGrid(int line, int colonne, newBlocks blocks , List<List<int>> grid){
         //     for(){
 
