@@ -18,6 +18,7 @@ namespace BlazorApp
             var test = new BlocksShape();
             test.BlockShape();
             CreateHostBuilder(args).Build().Run();
+            Console.WriteLine(BlocksShape.shapesArray.Length);
 
         }
 
