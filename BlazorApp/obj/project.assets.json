@@ -8,28 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lukeb\\.nuget\\packages\\": {}
+    "C:\\Users\\louis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Ynov B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
       "projectName": "BlazorApp",
-      "projectPath": "E:\\Ynov B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
-      "packagesPath": "C:\\Users\\lukeb\\.nuget\\packages\\",
-      "outputPath": "E:\\Ynov B2\\TP-Tetris-C-Sharp\\BlazorApp\\obj\\",
+      "projectPath": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\louis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lukeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\louis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",

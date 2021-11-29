@@ -13,6 +13,13 @@ namespace BlazorApp
     {
         public static void Main(string[] args)
         {
+            var Blocks = new newBlocks();
+            var test = new BlocksShape();
+            // BlocksShape test = new BlockShape();
+            // BlocksShape.RandomShape();
+            test.BlockShape();
+            // Console.WriteLine(BlocksShape.RandomShape());
+            // Console.WriteLine(BlocksShape.shapesArray.Length);
             CreateHostBuilder(args).Build().Run();
         }
 

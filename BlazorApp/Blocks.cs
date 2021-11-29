@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BlazorApp {
 
@@ -6,7 +7,7 @@ namespace BlazorApp {
 
         public int width;
         public int heigth;
-        public int[,] cube;
+        public int[,] pieces;
 
     }
 
@@ -14,70 +15,70 @@ namespace BlazorApp {
 
         public static newBlocks[] shapesArray;
 
-        BlocksShape(){
+        public void BlockShape(){
 
             shapesArray = new newBlocks[] {
                 //Square
                 new newBlocks {
                     width = 2,
                     heigth = 2,
-                    cube = new int[,] {
+                    pieces = new int[,] {
                         {1,1},
                         {1,1}
                     },
                 },
-
                 // Line
                 new newBlocks {
                     width = 4,
                     heigth = 1,
-                    cube = new int[,] {
-                        {1,1,1,1},
+                    pieces = new int[,] {
+                        {2,2,2,2},
                     },
                 },
+                
                 new newBlocks {
                     width = 1,
                     heigth = 4,
-                    cube = new int[,] {
-                        {1},
-                        {1},
-                        {1},
-                        {1}
+                    pieces = new int[,] {
+                        {2},
+                        {2},
+                        {2},
+                        {2}
                     },
                 },
                 // L-Block
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,0,0},
-                        {1,1,1}
+                    pieces = new int[,] {
+                        {3,0,0},
+                        {3,3,3}
                     },
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {1,1},
-                        {1,0},
-                        {1,0}
+                    pieces = new int[,] {
+                        {3,3},
+                        {3,0},
+                        {3,0}
                     },
                 },
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,1,1},
-                        {0,0,1}
+                    pieces = new int[,] {
+                        {3,3,3},
+                        {0,0,3}
                     },
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {0,1},
-                        {0,1},
-                        {1,1}
+                    pieces = new int[,] {
+                        {0,3},
+                        {0,3},
+                        {3,3}
                     },
                 },
 
@@ -85,35 +86,35 @@ namespace BlazorApp {
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {0,0,1},
-                        {1,1,1}
+                    pieces = new int[,] {
+                        {0,0,4},
+                        {4,4,4}
                     }
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {1,1},
-                        {0,1},
-                        {0,1}
+                    pieces = new int[,] {
+                        {4,0},
+                        {4,0},
+                        {4,4}
                     }
                 },
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,1,1},
-                        {1,0,1}
+                    pieces = new int[,] {
+                        {4,4,4},
+                        {4,0,0}
                     }
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {1,0},
-                        {1,0},
-                        {1,1}
+                    pieces = new int[,] {
+                        {4,4},
+                        {0,4},
+                        {0,4}
                     }
                 },
 
@@ -121,18 +122,18 @@ namespace BlazorApp {
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {0,1,1},
-                        {1,1,0}
+                    pieces = new int[,] {
+                        {0,5,5},
+                        {5,5,0}
                     },
                 },
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,0},
-                        {1,1},
-                        {0,1}
+                    pieces = new int[,] {
+                        {5,0},
+                        {5,5},
+                        {0,5}
                     }
                 },
                
@@ -140,65 +141,81 @@ namespace BlazorApp {
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {0,1,0},
-                        {1,1,1}
+                    pieces = new int[,] {
+                        {0,6,0},
+                        {6,6,6}
                     },
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {1,0},
-                        {1,1},
-                        {1,0}
+                    pieces = new int[,] {
+                        {6,0},
+                        {6,6},
+                        {6,0}
                     }
                 },
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,1,1},
-                        {0,1,0}
+                    pieces = new int[,] {
+                        {6,6,6},
+                        {0,6,0}
                     },
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {0,1},
-                        {1,1},
-                        {0,1}
+                    pieces = new int[,] {
+                        {0,6},
+                        {6,6},
+                        {0,6}
                     }
                 },
                 // Z-Block
                 new newBlocks {
                     width = 3,
                     heigth = 2,
-                    cube = new int[,] {
-                        {1,1,0},
-                        {0,1,1}
+                    pieces = new int[,] {
+                        {7,7,0},
+                        {0,7,7}
                     },
                 },
                 new newBlocks {
                     width = 2,
                     heigth = 3,
-                    cube = new int[,] {
-                        {0,1},
-                        {1,1},
-                        {1,0}
+                    pieces = new int[,] {
+                        {0,7},
+                        {7,7},
+                        {7,0}
                     }
                 },
-            }; 
-
+            };
+            
         }
-        public static newBlocks RandomShape(){
+
+        public static int randomInt(){
             
             var random = new Random();
             
-            var randomShape = shapesArray[random.Next(shapesArray.Length)];
+            // var randomInt = shapesArray[random]
+            var randomShape = random.Next(shapesArray.Length);
             
             return randomShape; 
+        }
+
+        public static int[] DisplayRandom(){
+
+            
+
+            for (int i = 0; i < shapesArray[randomInt()].heigth; i++){
+                for (int j = 0; j < shapesArray[randomInt()].width; j++){
+                    Console.Write(shapesArray[randomInt()].pieces[i, j]); 
+                }
+               Console.WriteLine();
+            };
+
+
         }
     }    
 }
