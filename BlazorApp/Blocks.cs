@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BlazorApp {
 
@@ -14,7 +15,7 @@ namespace BlazorApp {
     public class BlocksShape {
 
         public static newBlocks[] shapesArray;
-
+        
         public void BlockShape(){
 
             shapesArray = new newBlocks[] {
@@ -190,32 +191,41 @@ namespace BlazorApp {
                         {7,0}
                     }
                 },
-            };
-            
+            };          
+            // for (int i = 0; i < shapesArray[2].heigth; i++){                 
+            //     for (int j = 0; j < shapesArray[2].width; j++){
+
+            //     //    array[i, j] = shapesArray[2].pieces[i, j];
+            //        Console.Write(shapesArray[2].pieces[i, j]); 
+            //     }
+            //    Console.WriteLine();
+            // };  
         }
 
         public static int randomInt(){
             
             var random = new Random();
-            
-            // var randomInt = shapesArray[random]
             var randomShape = random.Next(shapesArray.Length);
             
             return randomShape; 
         }
 
-        public static int[] DisplayRandom(){
+        public static int[,] DisplayRandom(){
 
-            
+            List<List<int>> array = new List<List<int>>();
+            var random = randomInt();
 
-            for (int i = 0; i < shapesArray[randomInt()].heigth; i++){
-                for (int j = 0; j < shapesArray[randomInt()].width; j++){
-                    Console.Write(shapesArray[randomInt()].pieces[i, j]); 
+            for (int i = 0; i < shapesArray[random].heigth; i++){                 
+                for (int j = 0; j < shapesArray[random].width; j++){
+
+                   array.ElementAt(i).Add(shapesArray[random].pieces[i, j]);
+                
+                   Console.WriteLine(shapesArray[random].pieces[i, j]); 
                 }
                Console.WriteLine();
             };
-
-
+            array.ToArray();
+            return array;
         }
     }    
 }
