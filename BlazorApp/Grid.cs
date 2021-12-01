@@ -9,18 +9,18 @@ namespace BlazorApp
     public class Grid : BlocksShape
     {
 
-        public static int width {get; set; } = 10;
-        public static int height {get; set; } = 20;
+        public static int width{get; set; }= 10;
+        public static int height{get; set;} = 20;
 
-        public static List<List<int>> CreateGrid(int Gridwidth, int Gridheight){            
-            
-            width = Gridwidth; 
-            height = Gridheight;
+        public static List<List<int>> CreateGrid(int Gridwidth, int Gridheight){  
+
+            width = Gridwidth;
+            height = Gridheight;          
 
             List<List<int>> Grid = new List<List<int>>();
-            for(int j = 0; j < Gridheight; j++){
+            for(int j = 0; j < height; j++){
                 List<int> line = new List<int>();
-                for(int i = 0; i < Gridwidth; i++){
+                for(int i = 0; i < width; i++){
                     line.Add(0);
                     Console.Write(line[i]);
                 }
