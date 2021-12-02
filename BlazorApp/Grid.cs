@@ -45,5 +45,18 @@ namespace BlazorApp
                 }
             }
         }
+        public static void DeleteLine(List<List<int>> grid){
+            for(int i = height; i > 0; i--){
+                for(int j = 0; j < width; j++){
+                    if(grid[i][j] == 0){
+                        height--;
+                        DeleteLine(grid);
+                    }
+                }
+                for(int z = 0; z < width; z++){
+                    grid[i][z] = 0;
+                }
+            }   
+        }
     }
 }
