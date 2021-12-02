@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
 
-namespace BlazorApp {
+namespace BlazorApp.Data {
 
     public class GameOver : Grid {
 
