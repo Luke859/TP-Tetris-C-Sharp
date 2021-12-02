@@ -8,26 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\taobo\\.nuget\\packages\\": {}
+    "C:\\Users\\louis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\taobo\\OneDrive\\Documents\\Dossier Cours TAO\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
+      "projectUniqueName": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
       "projectName": "BlazorApp",
-      "projectPath": "C:\\Users\\taobo\\OneDrive\\Documents\\Dossier Cours TAO\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
-      "packagesPath": "C:\\Users\\taobo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\taobo\\OneDrive\\Documents\\Dossier Cours TAO\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\obj\\",
+      "projectPath": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
+      "packagesPath": "C:\\Users\\louis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\taobo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\louis\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
-      "sources": {
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
