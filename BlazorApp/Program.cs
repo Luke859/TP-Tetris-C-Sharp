@@ -16,7 +16,10 @@ namespace BlazorApp
             var Grid = new Grid();
             List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
             var test = new BlocksShape();
-            test.BlockShape();
+            test.BlockShape();var Blocks = new newBlocks();
+            // var BlocksShape = new BlocksShape();
+            // BlocksShape.BlockShape();
+            // Console.WriteLine(BlocksShape.DisplayRandom()); 
             CreateHostBuilder(args).Build().Run();
             Console.WriteLine(BlocksShape.shapesArray.Length);
 
@@ -28,7 +31,5 @@ namespace BlazorApp
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
-
     }
 }
