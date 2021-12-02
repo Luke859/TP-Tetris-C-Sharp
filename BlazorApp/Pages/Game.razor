@@ -22,7 +22,10 @@
         <div id="grille">
             @{
                 var grid = Grid.CreateGrid(10,20);
-                @* Grid.PlaceBlock(grid, BlocksShape) *@
+                for(int i = 0; i<10; i++){
+                    Grid.RefreshGrid(grid, 4, 0, i);
+                }
+                GameOver.GameIsOver();
             }
             @for(int y = 0; y < grid.Count; y++){
                 @for(int i = 0; i < grid.ElementAt(y).Count; i++)

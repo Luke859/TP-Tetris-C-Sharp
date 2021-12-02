@@ -7,7 +7,7 @@ namespace BlazorApp {
 
         public static Grid[,] grid = new Grid[width, height];
         
-        public void GameIsOver()
+        public static void GameIsOver()
         {
             for(int j = 0; j < width; j++)
             {
@@ -17,6 +17,7 @@ namespace BlazorApp {
                     Environment.Exit(0);
                 }
             }
+            Console.WriteLine("OOOOH ARRA");
             
         }
     }
