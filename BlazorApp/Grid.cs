@@ -30,10 +30,20 @@ namespace BlazorApp
             return Grid;
         }
 
-        // public List<List<int>> UpdateGrid(int line, int colonne, newBlocks blocks , List<List<int>> grid){
-        //     for(){
+        public static int WhichBlock( List<List<int>> grid, int line, int row){
+            return grid.ElementAt(line).ElementAt(row);
+        }
 
-        //     }
-        // }
+        public static void RefreshGrid(List<List<int>> grid, int block, int line, int row){
+            grid[line][row] = block;
+        }
+
+        public static void PlaceBlock(List<List<int>> grid, int[,] block, int line, int row){
+            for(int i = 0; i < block.GetLength(0); i++){
+                for(int j = 0; j < block.GetLength(1); j++){
+                    Console.Write(i + " + " + j);
+                }
+            }
+        }
     }
 }

@@ -20,13 +20,42 @@
         JEU TETRIS
 
         <div id="grille">
-            @for(int y = 0; y < 10; y++){
-                @foreach (var i in Grid.CreateGrid(10, 20))
-                {
-                    <div id="cell"></div>
-                }
+            @{
+                var grid = Grid.CreateGrid(10,20);
+                @* Grid.PlaceBlock(grid, BlocksShape) *@
             }
+            @for(int y = 0; y < grid.Count; y++){
+                @for(int i = 0; i < grid.ElementAt(y).Count; i++)
+                {
+                    @if(Grid.WhichBlock(grid, y, i) == 0){
+                        <div id="cell" class="cellEmpty"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 1){
+                        <div id="cell" class="cellSquare"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 2){
+                        <div id="cell" class="cellLine"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 3){
+                        <div id="cell" class="cellLBlock"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 4){
+                        <div id="cell" class="cellJBlock"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 5){
+                        <div id="cell" class="cellSBlock"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 6){
+                        <div id="cell" class="cellTBlock"></div>
+                    }
+                    @if(Grid.WhichBlock(grid, y, i) == 7){
+                        <div id="cell" class="cellZBlock"></div>
+                    }
+                }
+            }                        
+
         </div>
 
     </div>
 </div>
+
