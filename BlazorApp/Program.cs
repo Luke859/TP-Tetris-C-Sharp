@@ -16,7 +16,16 @@ namespace BlazorApp
             var Blocks = new newBlocks();
             var BlocksShape = new BlocksShape();
             BlocksShape.BlockShape();
-            Console.WriteLine(BlocksShape.DisplayRandom());
+            // Console.WriteLine(BlocksShape.DisplayRandom(BlocksShape.shapesArray));
+            // BlocksShape.shapesArray;
+            int[,] test =  BlocksShape.DisplayRandom(BlocksShape.shapesArray);
+            for (int i = 0; i < test.GetLength(0); i++){                 
+                for (int j = 0; j < test.GetLength(1); j++){
+
+                   Console.Write(test[i,j]); 
+                }
+               Console.WriteLine();
+            }; 
         }
     }
 }

@@ -15,9 +15,10 @@ namespace BlazorApp {
     public class BlocksShape {
 
         public static newBlocks[] shapesArray;
+
         public static int[,] array; 
 
-        public void BlockShape(){
+        public newBlocks[] BlockShape(){
 
             shapesArray = new newBlocks[] {
                 //Square
@@ -192,14 +193,9 @@ namespace BlazorApp {
                         {7,0}
                     }
                 },
-            };          
-            // for (int i = 0; i < shapesArray[2].heigth; i++){                 
-            //     for (int j = 0; j < shapesArray[2].width; j++){
+            };  
 
-            //        Console.Write(shapesArray[2].pieces[i, j]); 
-            //     }
-            //    Console.WriteLine();
-            // };  
+            return shapesArray;         
         }
 
         public static int randomInt(){
@@ -209,23 +205,12 @@ namespace BlazorApp {
             
             return randomShape; 
         }
+    
+        public static int[,] DisplayRandom(newBlocks[] array){
 
-        public static int[,] DisplayRandom(){
+            int random = randomInt();
 
-            // List<List<int>> array = new List<List<int>>();
-            // int[,] array2d ;
-            
-            var random = randomInt();
-
-           for (int i = 0; i < shapesArray[random].heigth; i++){  
-
-                for (int j = 0; j < shapesArray[random].width; j++){
-
-                    array[i, j] = shapesArray[random].pieces[i, j];
-                }
-               Console.WriteLine();
-            };  
-            return array;
-        }
+            return array[random].pieces;
+        }       
     }    
 }
