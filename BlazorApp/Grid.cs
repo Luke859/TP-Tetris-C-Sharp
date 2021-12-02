@@ -22,37 +22,41 @@ namespace BlazorApp
                 List<int> line = new List<int>();
                 for(int i = 0; i < width; i++){
                     line.Add(0);
-                    Console.Write(line[i]);
                 }
-                Console.WriteLine();
                 Grid.Add(line);
             }
             return Grid;
         }
 
-        public static int WhichBlock( List<List<int>> grid, int line, int row){
-            return grid.ElementAt(line).ElementAt(row);
+        public static int WhichBlock( List<List<int>> grid, int line, int column){
+            return grid.ElementAt(line).ElementAt(column);
         }
 
-        public static void RefreshGrid(List<List<int>> grid, int block, int line, int row){
-            grid[line][row] = block;
+        public static void RefreshGrid(List<List<int>> grid, int block, int line, int column){
+            grid[line][column] = block;
         }
 
-        public static void PlaceBlock(List<List<int>> grid, int[,] block, int line, int row){
+        public static void PlaceBlock(List<List<int>> grid, int[,] block, int line, int column){
+            int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
-                    Console.Write(i + " + " + j);
+                    grid[line][column] = block[i,j];
+                    column++;
                 }
+                line++;
+                column = startcolumn;
             }
         }
         public static void DeleteLine(List<List<int>> grid){
-            for(int i = height; i > 0; i--){
+            for(int i = height-1; i > -1; i--){
                 for(int j = 0; j < width; j++){
                     if(grid[i][j] == 0){
                         height--;
+                        Console.Write("test");
                         DeleteLine(grid);
                     }
                 }
+                Console.WriteLine();
                 for(int z = 0; z < width; z++){
                     grid[i][z] = 0;
                 }

@@ -15,8 +15,10 @@ namespace BlazorApp {
     public class BlocksShape {
 
         public static newBlocks[] shapesArray;
-        
-        public void BlockShape(){
+
+        public static int[,] array; 
+
+        public newBlocks[] BlockShape(){
 
             shapesArray = new newBlocks[] {
                 //Square
@@ -191,42 +193,24 @@ namespace BlazorApp {
                         {7,0}
                     }
                 },
-            }; 
-            Console.WriteLine(shapesArray.Length);         
-            // for (int i = 0; i < shapesArray[2].heigth; i++){                 
-            //     for (int j = 0; j < shapesArray[2].width; j++){
+            };  
 
-            //     //    array[i, j] = shapesArray[2].pieces[i, j];
-            //        Console.Write(shapesArray[2].pieces[i, j]); 
-            //     }
-            //    Console.WriteLine();
-            // };  
+            return shapesArray;         
         }
 
-        // public static int randomInt(){
+        public static int randomInt(){
             
-        //     var random = new Random();
-        //     var randomShape = random.Next(shapesArray.Length);
+            var random = new Random();
+            var randomShape = random.Next(shapesArray.Length);
             
-        //     return randomShape; 
-        // }
+            return randomShape; 
+        }
+    
+        public static int[,] DisplayRandom(newBlocks[] array){
 
-        // public static int[,] DisplayRandom(){
+            int random = randomInt();
 
-        //     List<List<int>> array = new List<List<int>>();
-        //     var random = randomInt();
-
-        //     for (int i = 0; i < shapesArray[random].heigth; i++){                 
-        //         for (int j = 0; j < shapesArray[random].width; j++){
-
-        //            array.ElementAt(i).Add(shapesArray[random].pieces[i, j]);
-                
-        //            Console.WriteLine(shapesArray[random].pieces[i, j]); 
-        //         }
-        //        Console.WriteLine();
-        //     };
-        //     array.ToArray();
-        //     return array;
-        // }
+            return array[random].pieces;
+        }       
     }    
 }

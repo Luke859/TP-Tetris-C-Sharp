@@ -1,3 +1,4 @@
+@using System.Timers;
 @namespace BlazorApp
 
 <div class="page">
@@ -22,10 +23,7 @@
         <div id="grille">
             @{
                 var grid = Grid.CreateGrid(10,20);
-                for(int i = 0; i<10; i++){
-                    Grid.RefreshGrid(grid, 4, 0, i);
-                }
-                GameOver.GameIsOver();
+                Grid.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), 0, 1);
             }
             @for(int y = 0; y < grid.Count; y++){
                 @for(int i = 0; i < grid.ElementAt(y).Count; i++)

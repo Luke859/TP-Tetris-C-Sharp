@@ -17,7 +17,6 @@ namespace BlazorApp {
                     Environment.Exit(0);
                 }
             }
-            Console.WriteLine("OOOOH ARRA");
             
         }
     }
