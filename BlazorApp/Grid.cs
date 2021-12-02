@@ -46,7 +46,7 @@ namespace BlazorApp
             }
         }
 
-        public static void DeleteLast(List<List<int>> grid, int line, int row){
+        public static void DeleteLastLine(List<List<int>> grid, int line, int row){
             for(int i = 0; i < line; i++){
                 for(int j = 0; j < row; j++){
                     if(grid[line][row + 1] != 0){
