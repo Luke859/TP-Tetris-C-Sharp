@@ -45,15 +45,18 @@ namespace BlazorApp
                 }
             }
         }
-
-        public static void DeleteLastLine(List<List<int>> grid, int line, int row){
-            for(int i = 0; i < line; i++){
-                for(int j = 0; j < row; j++){
-                    if(grid[line][row + 1] != 0){
-                        grid.RemoveAt(row);
+        public static void DeleteLine(List<List<int>> grid){
+            for(int i = height; i > 0; i--){
+                for(int j = 0; j < width; j++){
+                    if(grid[i][j] == 0){
+                        height--;
+                        DeleteLine(grid);
                     }
                 }
-            }
+                for(int z = 0; z < width; z++){
+                    grid[i][z] = 0;
+                }
+            }   
         }
     }
 }
