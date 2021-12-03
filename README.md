@@ -6,28 +6,29 @@
 
 Ce projet avait pour but d'implementer le jeu "Tetris" en C# en utilisant le frameWork Blazor. Nous étions 3 dans le groupe: **Luke JONES**, **Louis TEILLIAIS**, **Tao BOURMAUD**.
 
-Tout d'abord, il fallait créer **la page menu** de notre jeu qui contenait :
-- le bouton "play" qui redirige vers la page Game.
-- le bouton "options" qui redirige vers la page Options.
-- le bouton "credits" qui redirige vers la page Creidts.
+Tout d'abord, il fallait créer **la page menu** de notre jeu qui contient :
+- Le bouton "play" qui redirige vers la page Game.
+- Le bouton "options" qui redirige vers la page Options.
+- Le bouton "credits" qui redirige vers la page Creidts.
 
-Ensuite **la page options** qui contenait :
-- la vitesse du jeu (lent, normal et rapide)
-- la taille de la grille. 
+Ensuite **la page options** qui contient :
+- La vitesse du jeu (lent, normal et rapide).
+- La taille de la grille. 
 
 Il y a **la page jeu** qui contient le plus important notre jeu :), nous devions afficher sur cette page :
-- la grille 
-- un block random en haut de la grille qui peut s'empiler sur d'autre block. 
-- Un message GameOver quand le block est aussi haut que la grille
-- un bouton rejouer.
-- 5 boutons pour les mouvements du block (mouvement gauche, droit, tourner le block, mettre le jeu en pause et le faire tomber plus vite)
-- faire disparaitre une ligne quand elle est remplit par les blocks
+- La grille.
+- Un block random en haut de la grille qui peut s'empiler sur d'autre block. 
+- Un message GameOver quand le block est aussi haut que la grille.
+- Un bouton rejouer.
+- 5 boutons pour les mouvements du block (mouvement gauche, droit, tourner le block, et le faire tomber plus vite).
+- Un bouton pause.
+- Faire disparaitre une ligne quand elle est remplit par les blocks.
 
 **La page credits** contenant :
-- un lien vers le jeu original Tetris
-- une mention disant que c'est bien un project fait par nous même
-- les technologies utilisées (Blazor, .Net, c#)
-- Nos nom et prénom
+- Un lien vers le jeu original Tetris.
+- Une mention disant que c'est bien un project fait par nous même.
+- Les technologies utilisées (Blazor, .Net, c#).
+- Nos noms et prénoms.
 
 ---
 ## **Diagram de class**
