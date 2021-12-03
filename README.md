@@ -34,7 +34,7 @@ Il y a **la page jeu** qui contient le plus important notre jeu :), nous devions
 ## **Diagram de class**
 ---
 
-Pour ce qui est de la preparation nous avons commencer par faire un Diagram de Class sur Draw.Io, elle décrit la structure d'un système en montrant les classes du système, leurs attributs, leurs opérations et les relations entre les objets.
+Pour ce qui est de la préparation nous avons commencé par faire un Diagram de Class sur Draw.Io, elle décrit la structure d'un système en montrant les classes du système, leurs attributs, leurs opérations et les relations entre les objets.
 Voici notre schema : 
 
 ![](1.PNG)
@@ -43,7 +43,7 @@ Voici notre schema :
 ## **Schéma du design de notre jeu**
 ---
 
-Nous avons aussi fait un schéma du design de notre jeu pour avoir une aperçu a quoi elle pourrait ressembler et pour ensuite l'appliquer. Voici le design : 
+Nous avons aussi fait un schéma du design de notre jeu pour avoir un aperçu de ce à quoi il pourrait ressembler et pour ensuite l'appliquer. Voici le design : 
 
 ![](2.PNG)
 
@@ -51,28 +51,28 @@ Nous avons aussi fait un schéma du design de notre jeu pour avoir une aperçu a
 ## **Le code**
 ---
 
-Pour ce qui est du code pour le moment nous avons donc reussi :
-- faire le design du site
-- afficher la grille du jeu
-- placer un block random sur notre grille. 
+Pour ce qui est du code pour le moment nous avons reussi à :
+- Faire le design du site.
+- Afficher la grille du jeu.
+- Placer un block random sur notre grille. 
 
-Voici à quoi ressemble ce que nous avons accomplie  :
+Voici à quoi ressemble ce que nous avons accompli :
 
 ![](3.PNG)
 
 **Le code qui est en cours est :**
-- Positionnement des Blocks
-- Mouvement des Blocks
+- Positionnement des Blocks.
+- Mouvement des Blocks.
 
 
 **Le code future à faire :**
-- Tourner les Blocks							
-- Figer les Blocks
-- la fonction GameOver() et DeleteLine()					
-- Page de Credits
-- La difficulté de jeu							
-- Modification de la taille de la grille
-- affichage du score du jeu									
-- mettre le jeu en pause
+- Tourner les Blocks.							
+- Figer les Blocks.
+- La fonction GameOver() et DeleteLine().					
+- Page de Credits.
+- La difficulté de jeu.							
+- Modification de la taille de la grille.
+- Affichage du score du jeu.									
+- Mettre le jeu en pause.
 
 
