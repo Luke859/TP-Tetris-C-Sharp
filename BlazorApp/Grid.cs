@@ -13,7 +13,10 @@ namespace BlazorApp
         public int width{get; set; }= 10;
         public int height{get; set;} = 20;
 
-        public List<List<int>> CreateGrid(int Gridwidth, int Gridheight){  
+        public List<List<int>> data;
+        public int[,] actualBlock;
+
+        public Grid(int Gridwidth, int Gridheight){  
 
             width = Gridwidth;
             height = Gridheight;          
@@ -26,34 +29,49 @@ namespace BlazorApp
                 }
                 Grid.Add(line);
             }
-            return Grid;
+            this.data = Grid;
         }
 
-        public int WhichBlock( List<List<int>> grid, int line, int column){
-            return grid.ElementAt(line).ElementAt(column);
+        public int WhichBlock( int line, int column){
+            return this.data.ElementAt(line).ElementAt(column);
         }
 
-        public void RefreshGrid(List<List<int>> grid, int block, int line, int column){
-            grid[line][column] = block;
+        public void RefreshGrid(int block, int line, int column){
+            this.data[line][column] = block;
         }
 
-        public void PlaceBlock(List<List<int>> grid, int[,] block, int line, int column){
+        public void PlaceBlock(int[,] block, int line, int column){
             int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
-                    grid[line][column] = block[i,j];
+                    this.data[line][column] = block[i,j];
                     column++;
                 }
                 line++;
                 column = startcolumn;
             }
+            actualBlock = block;
         }
+
+        public void MovementRight(int[,] block){
+
+            int column = 0; 
+            
+            for(int i = 0; i < block.GetLength(0); i++){
+                for(int j = 0; j < block.GetLength(1); j++){
+                    column++;
+                }
+            }
+            block = actualBlock;
+            PlaceBlock(block, 0, column);
+        }
+
+
         public void DeleteLine(List<List<int>> grid){
             for(int i = height-1; i > -1; i--){
                 for(int j = 0; j < width; j++){
                     if(grid[i][j] == 0){
                         height--;
-                        Console.Write("test");
                         DeleteLine(grid);
                     }
                 }
@@ -62,10 +80,6 @@ namespace BlazorApp
                     grid[i][z] = 0;
                 }
             }   
-        }
-
-        public int MouvementRight(int column){
-            return column++;
         }
     }
 }
