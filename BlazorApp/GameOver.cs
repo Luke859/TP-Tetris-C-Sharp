@@ -1,23 +1,23 @@
 using System;
 using System.Collections;
 
-namespace BlazorApp {
+// namespace BlazorApp {
 
-    public class GameOver : Grid {
+//     // public class GameOver : Grid {
 
-        public static Grid[,] grid = new Grid[width, height];
+//         // public Grid[,] grid = new Grid[width, height];
         
-        public static void GameIsOver()
-        {
-            for(int j = 0; j < width; j++)
-            {
-                if(grid[j, height - 1] != null)
-                {
-                    Console.WriteLine("Game Over !!");
-                    Environment.Exit(0);
-                }
-            }
+//         // public void GameIsOver()
+//         // {
+//         //     for(int j = 0; j < width; j++)
+//         //     {
+//         //         if(grid[j, height - 1] != null)
+//         //         {
+//         //             Console.WriteLine("Game Over !!");
+//         //             Environment.Exit(0);
+//         //         }
+//         //     }
             
-        }
-    }
-}
+//         // }
+//     }
+// }
