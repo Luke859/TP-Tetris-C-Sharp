@@ -4,7 +4,11 @@
 ---
 
 
+<<<<<<< HEAD
 Ce projet avait pour but d'implementer le jeu "Tetris" en C# en utilisant le frameWork Blazor. Nous étions 3 dans le groupe: Luke JONES, Louis TEILLIAIS, Tao BOURMAUD.
+=======
+Ce projet avait pour but d'implementer le jeu "Tetris" en C# en utilisant le frameWork Blazor. Nous étions 3 dans le groupe: **Luke JONES**, **Louis TEILLIAIS**, **Tao BOURMAUD**.
+>>>>>>> main
 
 Tout d'abord, il fallait créer **la page menu** de notre jeu qui contenait :
 - le bouton "play" qui redirige vers la page Game.
@@ -73,4 +77,8 @@ Voici à quoi ressemble ce que nous avons accomplie  :
 - Modification de la taille de la grille
 - affichage du score du jeu									
 - mettre le jeu en pause
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 
