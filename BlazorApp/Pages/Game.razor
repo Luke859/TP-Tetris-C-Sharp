@@ -1,6 +1,12 @@
 @using System.Timers;
 @namespace BlazorApp
 
+@{
+    var line = 0;
+    var column = 3;
+    var grille = new Grid();
+}
+
 <div class="page">
     @page "/game"
     <h1 class="name">TETRIS</h1> 
@@ -8,7 +14,7 @@
 
     <button type="button" class="btnTurn">Turn</button>
     <button type="button" class="btnLeft">Left</button>
-    <button type="button" class="btnRight">Right</button>
+    <button @onclick="() =>grille.MouvementRight(column)" class="btnRight">Right</button>
     <button type="button" class="btnPause">Pause</button>
     <button type="button" class="btnSpeed">Speed</button>
 
@@ -22,34 +28,36 @@
 
         <div id="grille">
             @{
-                var grid = Grid.CreateGrid(10,20);
-                Grid.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), 0, 1);
+                var grid = grille.CreateGrid(10,20);
+                Timer timer = new Timer(1000);
+                timer.Start();               
+                grille.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column);
             }
             @for(int y = 0; y < grid.Count; y++){
                 @for(int i = 0; i < grid.ElementAt(y).Count; i++)
                 {
-                    @if(Grid.WhichBlock(grid, y, i) == 0){
+                    @if(grille.WhichBlock(grid, y, i) == 0){
                         <div id="cell" class="cellEmpty"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 1){
+                    @if(grille.WhichBlock(grid, y, i) == 1){
                         <div id="cell" class="cellSquare"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 2){
+                    @if(grille.WhichBlock(grid, y, i) == 2){
                         <div id="cell" class="cellLine"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 3){
+                    @if(grille.WhichBlock(grid, y, i) == 3){
                         <div id="cell" class="cellLBlock"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 4){
+                    @if(grille.WhichBlock(grid, y, i) == 4){
                         <div id="cell" class="cellJBlock"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 5){
+                    @if(grille.WhichBlock(grid, y, i) == 5){
                         <div id="cell" class="cellSBlock"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 6){
+                    @if(grille.WhichBlock(grid, y, i) == 6){
                         <div id="cell" class="cellTBlock"></div>
                     }
-                    @if(Grid.WhichBlock(grid, y, i) == 7){
+                    @if(grille.WhichBlock(grid, y, i) == 7){
                         <div id="cell" class="cellZBlock"></div>
                     }
                 }
