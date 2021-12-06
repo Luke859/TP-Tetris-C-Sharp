@@ -1,10 +1,33 @@
 @using System.Timers;
 @namespace BlazorApp
 
+@code{
+    int line = 0;
+    int column = 3;
+    Grid grille = new Grid();
+    List<List<int>> grid;
+    @* grille.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column); *@
+
+    void SetTimer()
+    {
+        // Create a timer with a two second interval.
+        var timer = new Timer(1000);
+        // Hook up the Elapsed event for the timer. 
+        timer.Elapsed += OnTimedEvent;
+        timer.AutoReset = true;
+        timer.Enabled = true;
+    }
+
+    void OnTimedEvent(Object source, ElapsedEventArgs e)
+    {
+        grille.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column);
+        Console.WriteLine("hey !");
+    }
+}
+
 @{
-    var line = 0;
-    var column = 3;
-    var grille = new Grid();
+    grid = grille.CreateGrid(10,20);
+    SetTimer();
 }
 
 <div class="page">
@@ -27,12 +50,6 @@
         JEU TETRIS
 
         <div id="grille">
-            @{
-                var grid = grille.CreateGrid(10,20);
-                Timer timer = new Timer(1000);
-                timer.Start();               
-                grille.PlaceBlock(grid, BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column);
-            }
             @for(int y = 0; y < grid.Count; y++){
                 @for(int i = 0; i < grid.ElementAt(y).Count; i++)
                 {
