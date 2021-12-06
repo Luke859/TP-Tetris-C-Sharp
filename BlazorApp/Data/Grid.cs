@@ -31,7 +31,7 @@ namespace BlazorApp.Data
             return grid.ElementAt(line).ElementAt(column);
         }
 
-        public  void RefreshGrid(List<List<int>> grid, int block, int line, int column){
+        public void RefreshGrid(List<List<int>> grid, int block, int line, int column){
             grid[line][column] = block;
         }
 
@@ -50,7 +50,6 @@ namespace BlazorApp.Data
 
         public void MovementRight(int[,] block){
 
-            var grid = CreateGrid(10,20);
             int column = 0; 
             int line = 0;
             
@@ -62,7 +61,6 @@ namespace BlazorApp.Data
             }
             PlaceBlock(grid, block, 0, column);
         }
-
         public void MovementLeft(int[,] block){
 
             var grid = CreateGrid(10,20);
@@ -91,6 +89,10 @@ namespace BlazorApp.Data
                     grid[i][z] = 0;
                 }
             }   
+        }
+
+        public int MouvementRight(int column){
+            return column++;
         }
     }
 }
