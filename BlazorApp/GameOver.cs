@@ -13,7 +13,7 @@ namespace BlazorApp {
             {
                 if(grid[j, height - 1] != null)
                 {
-                    Console.WriteLine("GameOver !!");
+                    Console.WriteLine("Game Over !!");
                     Environment.Exit(0);
                 }
             }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace BlazorApp {
 
-    public class newBlocks {
+    public class Block {
 
         public int width;
         public int heigth;
@@ -14,15 +14,15 @@ namespace BlazorApp {
 
     public class BlocksShape {
 
-        public static newBlocks[] shapesArray;
+        public static Block[] shapesArray;
 
         public static int[,] array; 
 
-        public newBlocks[] BlockShape(){
+        public Block[] BlockShape(){
 
-            shapesArray = new newBlocks[] {
+            shapesArray = new Block[] {
                 //Square
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 2,
                     pieces = new int[,] {
@@ -31,7 +31,7 @@ namespace BlazorApp {
                     },
                 },
                 // Line
-                new newBlocks {
+                new Block {
                     width = 4,
                     heigth = 1,
                     pieces = new int[,] {
@@ -39,7 +39,7 @@ namespace BlazorApp {
                     },
                 },
                 
-                new newBlocks {
+                new Block {
                     width = 1,
                     heigth = 4,
                     pieces = new int[,] {
@@ -50,7 +50,7 @@ namespace BlazorApp {
                     },
                 },
                 // L-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -58,7 +58,7 @@ namespace BlazorApp {
                         {3,3,3}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -67,7 +67,7 @@ namespace BlazorApp {
                         {3,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -75,7 +75,7 @@ namespace BlazorApp {
                         {0,0,3}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -86,7 +86,7 @@ namespace BlazorApp {
                 },
 
                 // J-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -94,7 +94,7 @@ namespace BlazorApp {
                         {4,4,4}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -103,7 +103,7 @@ namespace BlazorApp {
                         {4,4}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -111,7 +111,7 @@ namespace BlazorApp {
                         {4,0,0}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -122,7 +122,7 @@ namespace BlazorApp {
                 },
 
                 //S-Block 
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -130,7 +130,7 @@ namespace BlazorApp {
                         {5,5,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -141,7 +141,7 @@ namespace BlazorApp {
                 },
                
                 // T-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -149,7 +149,7 @@ namespace BlazorApp {
                         {6,6,6}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -158,7 +158,7 @@ namespace BlazorApp {
                         {6,0}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -166,7 +166,7 @@ namespace BlazorApp {
                         {0,6,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -176,7 +176,7 @@ namespace BlazorApp {
                     }
                 },
                 // Z-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -184,7 +184,7 @@ namespace BlazorApp {
                         {0,7,7}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -194,7 +194,6 @@ namespace BlazorApp {
                     }
                 },
             };  
-
             return shapesArray;         
         }
 
@@ -206,7 +205,7 @@ namespace BlazorApp {
             return randomShape; 
         }
     
-        public static int[,] DisplayRandom(newBlocks[] array){
+        public static int[,] DisplayRandom(Block[] array){
 
             int random = randomInt();
 
