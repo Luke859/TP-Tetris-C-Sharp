@@ -13,8 +13,8 @@ namespace BlazorApp.Data
     {
         public static void Main(string[] args)
         {
-            var Grid = new Grid();
-            List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
+            // var Grid = new Grid();
+            // List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
             var test = new BlocksShape();
             test.BlockShape();var Blocks = new Block();
             // var BlocksShape = new BlocksShape();

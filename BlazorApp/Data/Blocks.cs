@@ -12,7 +12,7 @@ namespace BlazorApp.Data {
 
     public class BlocksShape {
 
-        public static Block[] shapesArray;
+        public Block[] shapesArray;
 
         public int[,] array; 
 
@@ -203,7 +203,7 @@ namespace BlazorApp.Data {
             return randomShape; 
         }
     
-        public static int[,] DisplayRandom(Block[] array){
+        public int[,] DisplayRandom(Block[] array){
 
             int random = randomInt();
 
