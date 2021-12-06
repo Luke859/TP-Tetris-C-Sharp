@@ -4,15 +4,14 @@ using System.Linq;
 
 namespace BlazorApp.Data
 {
-    public class Grid : BlocksShape
+    public class Grid
     {
 
-        public static int width{get; set; }= 10;
-        public static int height{get; set;} = 20;
+        public int width{get; set; }= 10;
+        public int height{get; set;} = 20;
 
-        public static int[,] actualBlock;
-
-        public static List<List<int>> CreateGrid(int Gridwidth, int Gridheight){  
+        public  int[,] actualBlock;
+        public List<List<int>> CreateGrid(int Gridwidth, int Gridheight){  
 
             width = Gridwidth;
             height = Gridheight;          
@@ -28,15 +27,15 @@ namespace BlazorApp.Data
             return Grid;
         }
 
-        public static int WhichBlock( List<List<int>> grid, int line, int column){
+        public int WhichBlock( List<List<int>> grid, int line, int column){
             return grid.ElementAt(line).ElementAt(column);
         }
 
-        public static void RefreshGrid(List<List<int>> grid, int block, int line, int column){
+        public  void RefreshGrid(List<List<int>> grid, int block, int line, int column){
             grid[line][column] = block;
         }
 
-        public static void PlaceBlock(List<List<int>> grid, int[,] block, int line, int column){
+        public void PlaceBlock(List<List<int>> grid, int[,] block, int line, int column){
             int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
@@ -49,21 +48,36 @@ namespace BlazorApp.Data
             actualBlock = block;
         }
 
-        public static void MovementRight(int[,] block){
+        public void MovementRight(int[,] block){
 
-            var grid = Grid.CreateGrid(10,20);
+            var grid = CreateGrid(10,20);
             int column = 0; 
+            int line = 0;
             
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
+                    block[i,j] =grid[line][column];
                     column++;
                 }
             }
             PlaceBlock(grid, block, 0, column);
         }
 
+        public void MovementLeft(int[,] block){
 
-        public static void DeleteLine(List<List<int>> grid){
+            var grid = CreateGrid(10,20);
+            int column = 10; 
+            
+            for(int i = 0; i < block.GetLength(0); i++){
+                for(int j = 0; j < block.GetLength(1); j++){
+                    column--;
+                }
+            }
+            PlaceBlock(grid, block, 0, column);
+        }
+
+
+        public void DeleteLine(List<List<int>> grid){
             for(int i = height-1; i > -1; i--){
                 for(int j = 0; j < width; j++){
                     if(grid[i][j] == 0){

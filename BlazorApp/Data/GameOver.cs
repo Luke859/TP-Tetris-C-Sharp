@@ -2,11 +2,11 @@ using System;
 
 namespace BlazorApp.Data {
 
-    public class GameOver : Grid {
+    public class GameOver{
 
-        public static Grid[,] grid = new Grid[width, height];
+        public Grid[,] grid = new Grid[width, height];
         
-        public static void GameIsOver()
+        public void GameIsOver()
         {
             for(int j = 0; j < width; j++)
             {

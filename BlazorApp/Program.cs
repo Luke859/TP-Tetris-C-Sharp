@@ -16,7 +16,8 @@ namespace BlazorApp.Data
             var Grid = new Grid();
             List<List<int>> LouisTheShit = Grid.CreateGrid(10, 20);
             var test = new BlocksShape();
-            test.BlockShape();var Blocks = new newBlocks();
+            test.BlockShape();
+            var Blocks = new newBlocks();
             // var BlocksShape = new BlocksShape();
             // BlocksShape.BlockShape();
             // Console.WriteLine(BlocksShape.DisplayRandom()); 

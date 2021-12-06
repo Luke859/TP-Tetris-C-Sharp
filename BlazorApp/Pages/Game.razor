@@ -7,7 +7,7 @@
     <button type="button" class="button"><a href="">Retour au menu</a></button>
 
     <button type="button" class="btnTurn">Turn</button>
-    <button type="button" class="btnLeft">Left</button>
+    <button class="btnLeft" @onclick= "() => Grid.MovementLeft(Grid.actualBlock)">Left</button>
     <button class="btnRight" @onclick= "() => Grid.MovementRight(Grid.actualBlock)">Right </button>
     <button type="button"  class="btnPause">Pause</button>
     <button type="button" class="btnSpeed">Speed</button>
