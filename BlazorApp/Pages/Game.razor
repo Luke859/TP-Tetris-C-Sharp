@@ -1,11 +1,10 @@
 @using System.Timers;
 @namespace BlazorApp
 
-@{
-    var line = 0;
-    var column = 3;
-    var grille = new Grid(10,20);
-
+@code{
+    int line = 0;
+    int column = 2;
+    Grid grille = new Grid(10,20);
 }
 
 <div class="page">
@@ -15,7 +14,7 @@
 
     <button type="button" class="btnTurn">Turn</button>
     <button type="button" class="btnLeft">Left</button>
-    <button class="btnRight" @onclick= "() => {grille.MovementRight(grille.actualBlock);}">Right</button>
+    <button class="btnRight" @onclick= "() => {grille.MovementRight(grille.currentBlock);}">Right</button>
     <button type="button"  class="btnPause">Pause</button>
     <button type="button" class="btnSpeed">Speed</button>
 
@@ -29,8 +28,8 @@
 
         <div id="grille">
             @{
-                Timer timer = new Timer(1000);
-                timer.Start();               
+                @* Timer timer = new Timer(1000);
+                timer.Start();                *@
                 grille.PlaceBlock(BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column);
             }
             @for(int y = 0; y < grille.data.Count; y++){
