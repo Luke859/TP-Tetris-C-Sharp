@@ -2,7 +2,7 @@ using System;
 
 namespace BlazorApp.Data {
 
-    public class newBlocks {
+    public class Block {
 
         public int width;
         public int heigth;
@@ -12,15 +12,15 @@ namespace BlazorApp.Data {
 
     public class BlocksShape {
 
-        public newBlocks[] shapesArray;
+        public static Block[] shapesArray;
 
         public int[,] array; 
 
-        public newBlocks[] BlockShape(){
+        public Block[] BlockShape(){
 
-            shapesArray = new newBlocks[] {
+            shapesArray = new Block[] {
                 //Square
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 2,
                     pieces = new int[,] {
@@ -29,7 +29,7 @@ namespace BlazorApp.Data {
                     },
                 },
                 // Line
-                new newBlocks {
+                new Block {
                     width = 4,
                     heigth = 1,
                     pieces = new int[,] {
@@ -37,7 +37,7 @@ namespace BlazorApp.Data {
                     },
                 },
                 
-                new newBlocks {
+                new Block {
                     width = 1,
                     heigth = 4,
                     pieces = new int[,] {
@@ -48,7 +48,7 @@ namespace BlazorApp.Data {
                     },
                 },
                 // L-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -56,7 +56,7 @@ namespace BlazorApp.Data {
                         {3,3,3}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -65,7 +65,7 @@ namespace BlazorApp.Data {
                         {3,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -73,7 +73,7 @@ namespace BlazorApp.Data {
                         {0,0,3}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -84,7 +84,7 @@ namespace BlazorApp.Data {
                 },
 
                 // J-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -92,7 +92,7 @@ namespace BlazorApp.Data {
                         {4,4,4}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -101,7 +101,7 @@ namespace BlazorApp.Data {
                         {4,4}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -109,7 +109,7 @@ namespace BlazorApp.Data {
                         {4,0,0}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -120,7 +120,7 @@ namespace BlazorApp.Data {
                 },
 
                 //S-Block 
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -128,7 +128,7 @@ namespace BlazorApp.Data {
                         {5,5,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -139,7 +139,7 @@ namespace BlazorApp.Data {
                 },
                
                 // T-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -147,7 +147,7 @@ namespace BlazorApp.Data {
                         {6,6,6}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -156,7 +156,7 @@ namespace BlazorApp.Data {
                         {6,0}
                     }
                 },
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -164,7 +164,7 @@ namespace BlazorApp.Data {
                         {0,6,0}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -174,7 +174,7 @@ namespace BlazorApp.Data {
                     }
                 },
                 // Z-Block
-                new newBlocks {
+                new Block {
                     width = 3,
                     heigth = 2,
                     pieces = new int[,] {
@@ -182,7 +182,7 @@ namespace BlazorApp.Data {
                         {0,7,7}
                     },
                 },
-                new newBlocks {
+                new Block {
                     width = 2,
                     heigth = 3,
                     pieces = new int[,] {
@@ -191,8 +191,7 @@ namespace BlazorApp.Data {
                         {7,0}
                     }
                 },
-            }; 
-
+            };  
             return shapesArray;         
         }
 
@@ -204,7 +203,7 @@ namespace BlazorApp.Data {
             return randomShape; 
         }
     
-        public int[,] DisplayRandom(newBlocks[] array){
+        public static int[,] DisplayRandom(Block[] array){
 
             int random = randomInt();
 
