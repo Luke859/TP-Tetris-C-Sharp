@@ -4,6 +4,18 @@
 
 @code{
     static Grid grille = new Grid(10, 20);
+
+    async void GameLoop(){
+        while(true){
+            grille.Update();
+            StateHasChanged();
+            await Task.Delay(1000);
+        }
+    }
+
+    protected override void OnInitialized(){
+        GameLoop();
+    }
 }
 
 <div class="page">

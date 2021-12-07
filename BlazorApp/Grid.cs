@@ -16,7 +16,6 @@ namespace BlazorApp
         public int currentBlockLine = 0;
         public int currentBlockColumn = 3;
         public int[,] currentBlock;
-
         public Grid(int Gridwidth, int Gridheight){  
 
             width = Gridwidth;
@@ -38,6 +37,15 @@ namespace BlazorApp
             return this.data.ElementAt(line).ElementAt(column);
         }
 
+        public int[,] CreateEmptyBlock(){
+            int[,] emptyBlock = new int[currentBlock.GetLength(0), currentBlock.GetLength(1)];
+            for(int i = 0; i < currentBlock.GetLength(0); i++){
+                for(int j = 0; j < currentBlock.GetLength(1); j++){
+                    emptyBlock[i,j] = 0;
+                }
+            }
+            return emptyBlock;
+        }
         public void RefreshGrid(int block, int line, int column){
             this.data[line][column] = block;
         }
@@ -70,11 +78,8 @@ namespace BlazorApp
             }
         }
 
-        public void ReplaceCurrentBlock(){
-            
+        public void ReplaceCurrentBlock(){       
             int lengthBlock = currentBlock.Length;
-            
-
         }
 
         public void DeleteLine(List<List<int>> grid){
@@ -90,6 +95,12 @@ namespace BlazorApp
                     grid[i][z] = 0;
                 }
             }   
+        }
+
+        public void Update(){
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            currentBlockLine++;
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
     }
 }
