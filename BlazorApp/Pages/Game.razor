@@ -1,12 +1,19 @@
+@using System.Timers;
+@namespace BlazorApp
+@page "/game"
+
+@code{
+    static Grid grille = new Grid(10, 20);
+}
+
 <div class="page">
-    @page "/game"
     <h1 class="name">TETRIS</h1> 
     <button type="button" class="button"><a href="">Retour au menu</a></button>
 
     <button type="button" class="btnTurn">Turn</button>
     <button type="button" class="btnLeft">Left</button>
-    <button type="button" class="btnRight">Right</button>
-    <button type="button" class="btnPause">Pause</button>
+    <button class="btnRight" @onclick= "() => {grille.MovementRight(grille.actualBlock);}">Right</button>
+    <button type="button"  class="btnPause">Pause</button>
     <button type="button" class="btnSpeed">Speed</button>
 
     <div class="ScoreBoard">
@@ -18,12 +25,38 @@
         JEU TETRIS
 
         <div id="grille">
-            
+            @for(int y = 0; y < grille.data.Count; y++){
+                @for(int i = 0; i < grille.data.ElementAt(y).Count; i++)
+                {
+                    @if(grille.WhichBlock(y, i) == 0){
+                        <div id="cell" class="cellEmpty"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 1){
+                        <div id="cell" class="cellSquare"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 2){
+                        <div id="cell" class="cellLine"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 3){
+                        <div id="cell" class="cellLBlock"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 4){
+                        <div id="cell" class="cellJBlock"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 5){
+                        <div id="cell" class="cellSBlock"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 6){
+                        <div id="cell" class="cellTBlock"></div>
+                    }
+                    @if(grille.WhichBlock(y, i) == 7){
+                        <div id="cell" class="cellZBlock"></div>
+                    }
+                }
+            }                        
+
         </div>
 
     </div>
 </div>
 
-@code {
-
-}
