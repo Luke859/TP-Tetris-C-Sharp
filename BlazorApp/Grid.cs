@@ -13,10 +13,9 @@ namespace BlazorApp
         public int width{get; set; }= 10;
         public int height{get; set;} = 20;
         public List<List<int>> data;
-        public int[,] actualBlock;
         public int currentBlockLine = 0;
         public int currentBlockColumn = 3;
-
+        public int[,] currentBlock;
         public Grid(int Gridwidth, int Gridheight){  
 
             width = Gridwidth;
@@ -38,6 +37,15 @@ namespace BlazorApp
             return this.data.ElementAt(line).ElementAt(column);
         }
 
+        public int[,] CreateEmptyBlock(){
+            int[,] emptyBlock = new int[currentBlock.GetLength(0), currentBlock.GetLength(1)];
+            for(int i = 0; i < currentBlock.GetLength(0); i++){
+                for(int j = 0; j < currentBlock.GetLength(1); j++){
+                    emptyBlock[i,j] = 0;
+                }
+            }
+            return emptyBlock;
+        }
         public void RefreshGrid(int block, int line, int column){
             this.data[line][column] = block;
         }
@@ -53,23 +61,26 @@ namespace BlazorApp
                 column = startcolumn;
                 
             }
-            
-            actualBlock = block;
+            currentBlock = block;
         }
 
         public void MovementRight(int[,] block){
 
             int column = 0; 
-            
+            block = currentBlock;
+
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
                     column++;
                 }
+                // Console.WriteLine("TEST");
+                PlaceBlock(block, 0, column);
             }
-            block = actualBlock;
-            PlaceBlock(block, 0, column);
         }
 
+        public void ReplaceCurrentBlock(){       
+            int lengthBlock = currentBlock.Length;
+        }
 
         public void DeleteLine(List<List<int>> grid){
             for(int i = height-1; i > -1; i--){
@@ -84,6 +95,12 @@ namespace BlazorApp
                     grid[i][z] = 0;
                 }
             }   
+        }
+
+        public void Update(){
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            currentBlockLine++;
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
     }
 }
