@@ -12,9 +12,10 @@ namespace BlazorApp
 
         public int width{get; set; }= 10;
         public int height{get; set;} = 20;
-
         public List<List<int>> data;
         public int[,] actualBlock;
+        public int currentBlockLine = 0;
+        public int currentBlockColumn = 3;
 
         public Grid(int Gridwidth, int Gridheight){  
 
@@ -30,6 +31,7 @@ namespace BlazorApp
                 Grid.Add(line);
             }
             this.data = Grid;
+            this.PlaceBlock(BlocksShape.DisplayRandom(BlocksShape.shapesArray), currentBlockLine, currentBlockColumn);
         }
 
         public int WhichBlock( int line, int column){
@@ -44,12 +46,14 @@ namespace BlazorApp
             int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
-                    this.data[line][column] = block[i,j];
+                    data[line][column] = block[i,j];
                     column++;
                 }
                 line++;
                 column = startcolumn;
+                
             }
+            
             actualBlock = block;
         }
 

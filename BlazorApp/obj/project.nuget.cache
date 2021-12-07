@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MQ89KzwtI7INhlKAKtO+kleOksCyJ3At3VfcY4+4HR4qvdMUel4mpAc7b98X7beHa9iD77hWGq7/i7qNTSRqGQ==",
+  "dgSpecHash": "6/BSML71INx0hKE4TwggY03koFrgIkyv0X3nJdCvaMIwsxmZhP9XS0lqcASIBGfY9y3sWBBUxzFObg+QnowQwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\louis\\Ynov_Nantes\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
+  "projectFilePath": "C:\\Users\\taobo\\OneDrive\\Documents\\Dossier Cours TAO\\B2\\TP-Tetris-C-Sharp\\BlazorApp\\BlazorApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
