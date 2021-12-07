@@ -30,7 +30,9 @@ namespace BlazorApp
                 Grid.Add(line);
             }
             this.data = Grid;
-            this.PlaceBlock(BlocksShape.DisplayRandom(BlocksShape.shapesArray), currentBlockLine, currentBlockColumn);
+            currentBlock = BlocksShape.DisplayRandom(BlocksShape.shapesArray);
+            this.PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
+
         }
 
         public int WhichBlock( int line, int column){
@@ -61,21 +63,20 @@ namespace BlazorApp
                 column = startcolumn;
                 
             }
-            currentBlock = block;
         }
 
         public void MovementRight(int[,] block){
 
-            int column = 0; 
-            block = currentBlock;
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            currentBlockColumn++;
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
+        }
 
-            for(int i = 0; i < block.GetLength(0); i++){
-                for(int j = 0; j < block.GetLength(1); j++){
-                    column++;
-                }
-                // Console.WriteLine("TEST");
-                PlaceBlock(block, 0, column);
-            }
+        public void MovementLeft(int[,] block){
+
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            currentBlockColumn--;
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
 
         public void ReplaceCurrentBlock(){       
@@ -101,6 +102,7 @@ namespace BlazorApp
             PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
             currentBlockLine++;
             PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
+            Console.WriteLine(currentBlockLine);
         }
     }
 }
