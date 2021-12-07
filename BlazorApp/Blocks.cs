@@ -21,6 +21,7 @@ namespace BlazorApp {
         public Block[] BlockShape(){
 
             shapesArray = new Block[] {
+
                 //Square
                 new Block {
                     width = 2,

@@ -13,9 +13,9 @@ namespace BlazorApp
         public int width{get; set; }= 10;
         public int height{get; set;} = 20;
         public List<List<int>> data;
-        public int[,] actualBlock;
         public int currentBlockLine = 0;
         public int currentBlockColumn = 3;
+        public int[,] currentBlock;
 
         public Grid(int Gridwidth, int Gridheight){  
 
@@ -53,23 +53,29 @@ namespace BlazorApp
                 column = startcolumn;
                 
             }
-            
-            actualBlock = block;
+            currentBlock = block;
         }
 
         public void MovementRight(int[,] block){
 
             int column = 0; 
-            
+            block = currentBlock;
+
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
                     column++;
                 }
+                // Console.WriteLine("TEST");
+                PlaceBlock(block, 0, column);
             }
-            block = actualBlock;
-            PlaceBlock(block, 0, column);
         }
 
+        public void ReplaceCurrentBlock(){
+            
+            int lengthBlock = currentBlock.Length;
+            
+
+        }
 
         public void DeleteLine(List<List<int>> grid){
             for(int i = height-1; i > -1; i--){
