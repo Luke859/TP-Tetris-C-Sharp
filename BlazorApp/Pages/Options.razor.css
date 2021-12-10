@@ -1,15 +1,15 @@
 .pageOptions{
+    position: flex;
     background-color: black;
-    height: 40em;
+    height: auto;
 }
 
 .interface {
-    position: relative;
-    top: 5em;
+    position: flex;
     background-color: #5A2328;
     text-shadow: black 0.1em 0.1em 0.2em;
     -webkit-text-stroke: 2px black;
-    height: 35em;
+    height: 44em;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -19,22 +19,36 @@
     padding: 30px;
 }
 
-.button{
-    position: absolute;
-    display: flex;
-    font-size: 150%;
-    margin-top: 35%;
-    border-radius: 30px;
-    background-color: #00B691;
-    margin-left: 1%; 
-    white-space: normal;
-    padding: 8px 15px;
-}
-
 .name {
-    position: absolute;
+    position: flex;
     font-size: 350%;
     color: #00B691;
-    margin-top: 2%;
-    margin-left: 1%;
+    padding: 1%;
+}
+
+.button{
+    position: flex;
+    font-size: 150%;
+    border-radius: 30px;
+    background-color: #00B691;
+    margin-left: 2%; 
+    padding: 8px 15px;
+    text-decoration: none;
+    margin-bottom: 1%;
+}
+
+.size{
+    font-size: 225%;
+}
+
+.speed{
+    font-size: 200%;
+    position: relative;
+    padding: 0 0 0 2rem;
+}
+
+#checkbox{
+    display: block;
+    cursor: pointer;
+    transform : scale(3);
 }

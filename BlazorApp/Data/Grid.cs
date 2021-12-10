@@ -5,7 +5,7 @@ using System.Timers;
 
 
 
-namespace BlazorApp
+namespace BlazorApp.Data
 {
     public class Grid
     {

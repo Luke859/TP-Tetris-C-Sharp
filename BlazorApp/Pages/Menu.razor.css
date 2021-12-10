@@ -1,5 +1,7 @@
 .page{
+    position: flex;
     background-color: black;
+    height: auto;
 }
 
 .interface {
@@ -7,9 +9,8 @@
     background-color: #0B3CFF;
     text-shadow: black 0.1em 0.1em 0.2em;
     -webkit-text-stroke: 2px black;
-    height: 35em;
+    height: 44em;
     width: 50%;
-    height: auto;
     margin-left: auto;
     margin-right: auto;
     border-spacing: 5px 1rem;
@@ -20,19 +21,23 @@
 
 .name {
     display: flex;
-    font-size: 700%;
-    color: yellow;
+    font-size: 800%;
+    color: #00B691;
     justify-content: center;
 }
 .button{
     display: flex;
-    font-size: 200%;
+    font-size: 300%;
     border-radius: 30px;
-    background-color: #0DEF1C;
+    background-color: #00B691;
     margin: 40px auto;
     justify-content: center;
     flex-direction: column;
     white-space: normal;
     padding: 8px 15px;
     color: black;
+}
+
+.buttonsMenu{
+    margin-top: 12%;
 }
