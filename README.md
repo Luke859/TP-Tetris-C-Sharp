@@ -35,9 +35,14 @@ Il y a **la page jeu** qui contient le plus important notre jeu :), nous devions
 ---
 
 Pour ce qui est de la préparation nous avons commencé par faire un Diagram de Class sur Draw.Io, elle décrit la structure d'un système en montrant les classes du système, leurs attributs, leurs opérations et les relations entre les objets.
-Voici notre schema : 
+Voici notre schema au début de projet : 
 
-![](1.PNG)
+![](Img/1.PNG)
+****
+
+Schéma final avec notre avancé dans le projet : 
+
+![](Img/4.PNG)
 
 ---
 ## **Schéma du design de notre jeu**
@@ -45,27 +50,31 @@ Voici notre schema :
 
 Nous avons aussi fait un schéma du design de notre jeu pour avoir un aperçu de ce à quoi il pourrait ressembler et pour ensuite l'appliquer. Voici le design : 
 
-![](2.PNG)
+![](Img/2.PNG)
 
 ---
 ## **Le code**
 ---
 
-Pour ce qui est du code pour le moment nous avons reussi à :
-- Faire le design du site.
+Pour ce qui est du code,, nous avons réussi à :
+
 - Afficher la grille du jeu.
 - Placer un block random sur notre grille. 
+- Faire descendre les blocks avec un timer.
+- Les bloquer à gauche et à droite de la grille.
 
 Voici à quoi ressemble ce que nous avons accompli :
 
-![](3.PNG)
+![](Img/3.PNG)
 
-**Le code qui est en cours est :**
+
+
+**Fonctionnalités que l'on a réussi entre la soutenance et le rendu**
 - Positionnement des Blocks.
 - Mouvement des Blocks.
 
 
-**Le code future à faire :**
+**Fonctionnalités à déveloper :**
 - Tourner les Blocks.							
 - Figer les Blocks.
 - La fonction GameOver() et DeleteLine().					
@@ -74,5 +83,3 @@ Voici à quoi ressemble ce que nous avons accompli :
 - Modification de la taille de la grille.
 - Affichage du score du jeu.									
 - Mettre le jeu en pause.
-
-
