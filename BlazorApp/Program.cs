@@ -13,6 +13,9 @@ namespace BlazorApp
     {
         public static void Main(string[] args)
         {
+            var test = new Data.BlocksShape();
+            test.BlockShape();
+            var Blocks = new Data.Block();
             CreateHostBuilder(args).Build().Run();
         }
 

@@ -113,7 +113,43 @@
 
 #grille {
     display: flex;
+    flex-wrap: wrap;
     background-color: black;
     height: 95%;
     width: 75%;
+}
+
+#cell {
+    width: 10%;
+    height: 5%;
+    border: 1px solid;
+    border-color: grey;
+}
+
+.cellSquare{
+    background-color: yellow;
+}
+
+.cellLine{
+    background-color: skyblue;
+}
+
+.cellLBlock{
+    background-color: orange;
+}
+
+.cellJBlock{
+    background-color: blue;
+}
+
+.cellSBlock{
+    background-color: green;
+}
+
+.cellTBlock{
+    background-color: purple;
+}
+
+.cellZBlock{
+    background-color: red;
 }
