@@ -100,17 +100,6 @@
     margin-left: 65%; 
 }
 
-.btnSpeed{
-    position: absolute;
-    font-size: 150%;
-    margin-top: 2%;
-    width: 6%;
-    height: 12%;
-    border-radius: 40px;
-    background-color: #00B691;
-    margin-left: 72%; 
-}
-
 #grille {
     display: flex;
     flex-wrap: wrap;

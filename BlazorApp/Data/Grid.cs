@@ -48,10 +48,6 @@ namespace BlazorApp.Data
             }
             return emptyBlock;
         }
-        public void RefreshGrid(int block, int line, int column){
-            this.data[line][column] = block;
-        }
-
         public void PlaceBlock(int[,] block, int line, int column){
             int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
@@ -82,10 +78,6 @@ namespace BlazorApp.Data
             }
             
             PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
-        }
-
-        public void ReplaceCurrentBlock(){       
-            int lengthBlock = currentBlock.Length;
         }
 
         public void DeleteLine(List<List<int>> grid){
