@@ -1,40 +1,46 @@
 .pageCredits{
+    position: flex;
     background-color: black;
-    height: 40em;
+    height: auto;
 }
 
 .interface {
-    position: relative;
-    top: 5em;
+    position: flex;
     background-color: #5A2328;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    -webkit-text-stroke: 2px black;
-    height: 35em;
+    height: auto;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    border-spacing: 5px 1rem;
-    text-align: center;
-    border: 1px solid #000;
-    padding: 30px;
+    padding: 23px;
 }
 
 .button{
-    position: absolute;
-    display: flex;
+    position: flex;
     font-size: 150%;
-    margin-top: 35%;
     border-radius: 30px;
     background-color: #00B691;
-    margin-left: 1%; 
-    white-space: normal;
+    margin-left: 2%; 
     padding: 8px 15px;
+    text-decoration: none;
+    margin-bottom: 1%;
 }
 
 .name {
-    position: absolute;
+    position: flex;
     font-size: 350%;
     color: #00B691;
-    margin-top: 2%;
-    margin-left: 1%;
+    padding: 1%;
+}
+
+.texte{
+    font-size: 225%;
+    text-align: center;
+}
+
+p{
+    -webkit-text-stroke: 2px black;
+}
+
+p1{
+    color: #00B691;
 }

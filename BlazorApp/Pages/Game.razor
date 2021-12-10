@@ -1,19 +1,29 @@
 @using System.Timers;
 @namespace BlazorApp
+@page "/game"
 
 @code{
-    int line = 0;
-    int column = 2;
-    Grid grille = new Grid(10,20);
+    Data.Grid grille = new Data.Grid(10, 20);
+
+    async void GameLoop(){
+        while(true){
+            grille.BlockDown();
+            StateHasChanged();
+            await Task.Delay(1000);
+        }
+    }
+
+    protected override void OnInitialized(){
+        GameLoop();
+    }
 }
 
 <div class="page">
-    @page "/game"
     <h1 class="name">TETRIS</h1> 
     <button type="button" class="button"><a href="">Retour au menu</a></button>
 
     <button type="button" class="btnTurn">Turn</button>
-    <button type="button" class="btnLeft">Left</button>
+    <button class="btnLeft" @onclick= "() => {grille.MovementLeft(grille.currentBlock);}">Left</button>
     <button class="btnRight" @onclick= "() => {grille.MovementRight(grille.currentBlock);}">Right</button>
     <button type="button"  class="btnPause">Pause</button>
     <button type="button" class="btnSpeed">Speed</button>
@@ -27,11 +37,6 @@
         JEU TETRIS
 
         <div id="grille">
-            @{
-                @* Timer timer = new Timer(1000);
-                timer.Start();                *@
-                grille.PlaceBlock(BlocksShape.DisplayRandom(BlocksShape.shapesArray), line, column);
-            }
             @for(int y = 0; y < grille.data.Count; y++){
                 @for(int i = 0; i < grille.data.ElementAt(y).Count; i++)
                 {

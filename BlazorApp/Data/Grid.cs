@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 
 
 
-namespace BlazorApp
+namespace BlazorApp.Data
 {
-    public class Grid 
+    public class Grid
     {
 
         public int width{get; set; }= 10;
         public int height{get; set;} = 20;
         public List<List<int>> data;
+        public int currentBlockLine = 0;
+        public int currentBlockColumn = 3;
         public int[,] currentBlock;
-
         public Grid(int Gridwidth, int Gridheight){  
 
             width = Gridwidth;
@@ -28,12 +30,24 @@ namespace BlazorApp
                 Grid.Add(line);
             }
             this.data = Grid;
+            currentBlock = BlocksShape.DisplayRandom(BlocksShape.shapesArray);
+            this.PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
+
         }
 
         public int WhichBlock( int line, int column){
             return this.data.ElementAt(line).ElementAt(column);
         }
 
+        public int[,] CreateEmptyBlock(){
+            int[,] emptyBlock = new int[currentBlock.GetLength(0), currentBlock.GetLength(1)];
+            for(int i = 0; i < currentBlock.GetLength(0); i++){
+                for(int j = 0; j < currentBlock.GetLength(1); j++){
+                    emptyBlock[i,j] = 0;
+                }
+            }
+            return emptyBlock;
+        }
         public void RefreshGrid(int block, int line, int column){
             this.data[line][column] = block;
         }
@@ -42,34 +56,36 @@ namespace BlazorApp
             int startcolumn = column;
             for(int i = 0; i < block.GetLength(0); i++){
                 for(int j = 0; j < block.GetLength(1); j++){
-                    this.data[line][column] = block[i,j];
+                    data[line][column] = block[i,j];
                     column++;
                 }
                 line++;
                 column = startcolumn;
+                
             }
-            currentBlock = block;
         }
 
         public void MovementRight(int[,] block){
 
-            int column = 0; 
-            block = currentBlock;
-
-            for(int i = 0; i < block.GetLength(0); i++){
-                for(int j = 0; j < block.GetLength(1); j++){
-                    column++;
-                }
-                // Console.WriteLine("TEST");
-                PlaceBlock(block, 0, column);
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            if(currentBlockColumn < width - currentBlock.GetLength(1)){
+                currentBlockColumn++;
             }
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
 
-        public void ReplaceCurrentBlock(){
-            
-            int lengthBlock = currentBlock.Length;
-            
+        public void MovementLeft(int[,] block){
 
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            if(currentBlockColumn > 0){
+                currentBlockColumn--;
+            }
+            
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
+        }
+
+        public void ReplaceCurrentBlock(){       
+            int lengthBlock = currentBlock.Length;
         }
 
         public void DeleteLine(List<List<int>> grid){
@@ -85,6 +101,14 @@ namespace BlazorApp
                     grid[i][z] = 0;
                 }
             }   
+        }
+
+        public void BlockDown(){
+            PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
+            if(currentBlockLine < height - currentBlock.GetLength(0)){
+                currentBlockLine++;
+            }
+            PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
     }
 }
