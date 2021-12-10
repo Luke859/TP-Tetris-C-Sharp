@@ -7,7 +7,7 @@
 
     async void GameLoop(){
         while(true){
-            grille.Update();
+            grille.BlockDown();
             StateHasChanged();
             await Task.Delay(1000);
         }

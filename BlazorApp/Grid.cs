@@ -68,14 +68,19 @@ namespace BlazorApp
         public void MovementRight(int[,] block){
 
             PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
-            currentBlockColumn++;
+            if(currentBlockColumn < width - currentBlock.GetLength(1)){
+                currentBlockColumn++;
+            }
             PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
 
         public void MovementLeft(int[,] block){
 
             PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
-            currentBlockColumn--;
+            if(currentBlockColumn > 0){
+                currentBlockColumn--;
+            }
+            
             PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
         }
 
@@ -98,11 +103,12 @@ namespace BlazorApp
             }   
         }
 
-        public void Update(){
+        public void BlockDown(){
             PlaceBlock(CreateEmptyBlock(), currentBlockLine, currentBlockColumn);
-            currentBlockLine++;
+            if(currentBlockLine < height - currentBlock.GetLength(0)){
+                currentBlockLine++;
+            }
             PlaceBlock(currentBlock, currentBlockLine, currentBlockColumn);
-            Console.WriteLine(currentBlockLine);
         }
     }
 }
